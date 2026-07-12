@@ -11,7 +11,18 @@ const journals = [
     "rating": 4.5,
     "bookmarked": false
   },
-  // ... 29 jurnal lainnya
+  {
+    "title": "INTERNATIONAL JOURNAL OF ELECTRICAL AND COMPUTER ENGINEERING",
+    "sinta_level": "S1",
+    "apc": "$50-$150",
+    "loa_time": "1-2 minggu",
+    "website_url": "http://ijece.iaescore.com",
+    "scope": "Engineering, Science",
+    "publisher": "Institute of Advanced Engineering and Science",
+    "rating": 4.8,
+    "bookmarked": false
+  },
+  // ... 28 jurnal lainnya (copy dari data/journals.json)
 ];
 
 // Load bookmarks dan ratings dari localStorage
@@ -40,6 +51,8 @@ function saveLocalData() {
 // Render jurnal ke HTML
 function renderJournals(journalsToRender) {
     const journalList = document.getElementById('journal-list');
+    if (!journalList) return;
+    
     journalList.innerHTML = '';
     
     journalsToRender.forEach(journal => {
@@ -86,23 +99,7 @@ function setupEventListeners() {
     document.getElementById('search')?.addEventListener('input', filterJournals);
     
     // Tombol Cari
-    document.getElementById('search-btn')?.addEventListener('click', () => {
-        filterJournals();
-        window.location.href = '/journals.html';
-    });
-    
-    // Tombol Journals di navbar
-    document.querySelectorAll('.nav-links a[href="/"]').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = '/journals.html';
-        });
-    });
-    
-    // Tombol CTA
-    document.getElementById('cta-btn')?.addEventListener('click', () => {
-        window.location.href = '/journals.html';
-    });
+    document.getElementById('search-btn')?.addEventListener('click', filterJournals);
     
     // Stars rating
     document.querySelectorAll('.stars').forEach(starContainer => {
@@ -154,4 +151,6 @@ function filterJournals() {
 
 // Initialize
 loadLocalData();
-setupEventListeners();
+document.addEventListener('DOMContentLoaded', () => {
+    renderJournals(journals);
+});
