@@ -8,16 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">SINTA Journal Finder</a>
+            <div class="nav-links">
+                <a href="/">Journals</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
-            <h1><span class="highlight">SINTA</span> Journal Finder</h1>
-            <p>Temukan jurnal SINTA 2-6 <strong>gratis/biaya rendah</strong> dan <strong>LOA cepat</strong>.</p>
+        <header class="hero">
+            <h1>Temukan Jurnal SINTA Terbaik</h1>
+            <p>Filter jurnal SINTA 2-6 yang <strong>gratis/biaya rendah</strong> dan <strong>LOA cepat</strong>.</p>
         </header>
 
         <div class="search-filter">
             <div class="search-box">
                 <input type="text" id="search" placeholder="Cari jurnal... (contoh: Education, Gratis)" />
-                <button id="search-btn">🔍</button>
+                <button id="search-btn">🔍 Cari</button>
             </div>
             
             <div class="filters">
@@ -74,6 +85,22 @@
 
         <div class="journal-grid" id="journal-list"></div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">SINTA Journal Finder</div>
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SINTA Journal Finder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
