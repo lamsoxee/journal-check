@@ -1,0 +1,10 @@
+# Ignore files
+node_modules/
+*.log
+.DS_Store
+.env
+__pycache__/
+*.pyc
+
+# Data mentah (opsional)
+data/raw_journals.json

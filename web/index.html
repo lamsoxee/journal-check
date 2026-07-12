@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINTA Journal Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Cari Jurnal SINTA</h1>
+        <p>Filter jurnal SINTA 2-6 yang <strong>gratis/biaya rendah</strong> dan <strong>LOA cepat</strong>.</p>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="sinta-level">SINTA Level</label>
+                <select id="sinta-level">
+                    <option value="all">Semua</option>
+                    <option value="S1">S1</option>
+                    <option value="S2">S2</option>
+                    <option value="S3">S3</option>
+                    <option value="S4">S4</option>
+                    <option value="S5">S5</option>
+                    <option value="S6">S6</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="apc">Biaya Publikasi</label>
+                <select id="apc">
+                    <option value="all">Semua</option>
+                    <option value="Gratis">Gratis</option>
+                    <option value="Rp 0 - Rp 500.000">Rp 0 - Rp 500.000</option>
+                    <option value="Rp 500.000 - Rp 1.000.000">Rp 500.000 - Rp 1.000.000</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="loa-time">LOA Time</label>
+                <select id="loa-time">
+                    <option value="all">Semua</option>
+                    <option value="1-2 minggu">1-2 minggu</option>
+                    <option value="2-4 minggu">2-4 minggu</option>
+                    <option value="4-6 minggu">4-6 minggu</option>
+                    <option value="6+ minggu">6+ minggu</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="search">Cari Judul/Jurusan</label>
+                <input type="text" id="search" placeholder="Ketik kata kunci...">
+            </div>
+        </div>
+
+        <div class="results">
+            <div class="result-header">
+                <span>Judul Jurnal</span>
+                <span>SINTA</span>
+                <span>Biaya</span>
+                <span>LOA Time</span>
+                <span>Aksi</span>
+            </div>
+            <div id="journal-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
