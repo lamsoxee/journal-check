@@ -4,64 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SINTA Journal Finder</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🔍 Cari Jurnal SINTA</h1>
-        <p>Filter jurnal SINTA 2-6 yang <strong>gratis/biaya rendah</strong> dan <strong>LOA cepat</strong>.</p>
+        <header>
+            <h1><span class="highlight">SINTA</span> Journal Finder</h1>
+            <p>Temukan jurnal SINTA 2-6 <strong>gratis/biaya rendah</strong> dan <strong>LOA cepat</strong>.</p>
+        </header>
 
-        <div class="filters">
-            <div class="filter-group">
-                <label for="sinta-level">SINTA Level</label>
-                <select id="sinta-level">
-                    <option value="all">Semua</option>
-                    <option value="S1">S1</option>
-                    <option value="S2">S2</option>
-                    <option value="S3">S3</option>
-                    <option value="S4">S4</option>
-                    <option value="S5">S5</option>
-                    <option value="S6">S6</option>
-                </select>
+        <div class="search-filter">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Cari jurnal... (contoh: Education, Gratis)" />
+                <button id="search-btn">🔍</button>
             </div>
             
-            <div class="filter-group">
-                <label for="apc">Biaya Publikasi</label>
-                <select id="apc">
-                    <option value="all">Semua</option>
-                    <option value="Gratis">Gratis</option>
-                    <option value="Rp 0 - Rp 500.000">Rp 0 - Rp 500.000</option>
-                    <option value="Rp 500.000 - Rp 1.000.000">Rp 500.000 - Rp 1.000.000</option>
-                </select>
-            </div>
-            
-            <div class="filter-group">
-                <label for="loa-time">LOA Time</label>
-                <select id="loa-time">
-                    <option value="all">Semua</option>
-                    <option value="1-2 minggu">1-2 minggu</option>
-                    <option value="2-4 minggu">2-4 minggu</option>
-                    <option value="4-6 minggu">4-6 minggu</option>
-                    <option value="6+ minggu">6+ minggu</option>
-                </select>
-            </div>
-            
-            <div class="filter-group">
-                <label for="search">Cari Judul/Jurusan</label>
-                <input type="text" id="search" placeholder="Ketik kata kunci...">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="sinta-level">SINTA Level</label>
+                    <select id="sinta-level">
+                        <option value="all">Semua</option>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                        <option value="S4">S4</option>
+                        <option value="S5">S5</option>
+                        <option value="S6">S6</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="apc">Biaya Publikasi</label>
+                    <select id="apc">
+                        <option value="all">Semua</option>
+                        <option value="Gratis">Gratis</option>
+                        <option value="Rp 0 - Rp 500.000">Rp 0 - Rp 500.000</option>
+                        <option value="Rp 500.000 - Rp 1.500.000">Rp 500.000 - Rp 1.500.000</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="loa-time">LOA Time</label>
+                    <select id="loa-time">
+                        <option value="all">Semua</option>
+                        <option value="1-2 minggu">1-2 minggu</option>
+                        <option value="2-4 minggu">2-4 minggu</option>
+                        <option value="4-6 minggu">4-6 minggu</option>
+                        <option value="6+ minggu">6+ minggu</option>
+                    </select>
+                </div>
             </div>
         </div>
 
-        <div class="results">
-            <div class="result-header">
-                <span>Judul Jurnal</span>
-                <span>SINTA</span>
-                <span>Biaya</span>
-                <span>LOA Time</span>
-                <span>Aksi</span>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">30+</div>
+                <div class="stat-label">Jurnal Tersedia</div>
             </div>
-            <div id="journal-list"></div>
+            <div class="stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Gratis/Rendah Biaya</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2-4 minggu</div>
+                <div class="stat-label">LOA Rata-rata</div>
+            </div>
         </div>
+
+        <div class="journal-grid" id="journal-list"></div>
     </div>
 
     <script src="script.js"></script>
