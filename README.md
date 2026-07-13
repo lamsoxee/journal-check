@@ -1,19 +1,22 @@
 # SINTA Journal Finder
 
-Website untuk mencari jurnal SINTA 2-6 yang **gratis/biaya rendah** dan **LOA cepat**.
+Website untuk mencari jurnal SINTA 2-6 yang **gratis/biaya rendah** dan **LOA cepat** dengan fitur **filter canggih** dan **UI modern**.
 
 ## 📌 Fitur
-- **Filter**: SINTA level, biaya publikasi, LOA time, bidang ilmu.
-- **Search**: Cari jurnal berdasarkan judul/jurusan.
-- **Dark Theme**: Desain minimalis dan responsif.
+- **Filter Dropdown**: SINTA level, biaya publikasi (APC), LOA time, frekuensi terbit, bahasa.
+- **Search**: Cari jurnal berdasarkan **judul** atau **scope** (bidang ilmu).
+- **Sorting**: Urutkan berdasarkan nama, SINTA level, atau APC.
+- **Bookmark**: Simpan jurnal favorit (persist di `localStorage`).
+- **Dark Mode**: Desain responsif dengan toggle dark/light mode.
+- **Pagination**: 10 jurnal per halaman (biar gak lag).
 - **Data Terupdate**: 30+ jurnal SINTA (Education, gratis/Rp0-Rp1.5jt).
 
 ## 🚀 Cara Jalankan
 ### Lokal
 1. Clone repo:
    ```bash
-   git clone /Users/mm/sinta_journal_website
-   cd sinta_journal_website
+   git clone ~/projects/sinta-journal-finder
+   cd sinta-journal-finder
    ```
 2. Jalankan server:
    ```bash
@@ -29,14 +32,11 @@ Website untuk mencari jurnal SINTA 2-6 yang **gratis/biaya rendah** dan **LOA ce
 ## 📂 Struktur Folder
 ```
 .
-├── assets/          # Gambar/logo (opsional)
 ├── data/
-│   └── journals.json # Data jurnal (JSON)
-├── scripts/         # Script scrape (opsional)
-├── index.html       # Halaman utama
-├── script.js        # Logika filter/search
-├── style.css        # Desain dark theme
-└── README.md        # Dokumentasi
+│   └── journals.json    # Data jurnal (JSON, auto-generate `id`)
+├── index.html           # Halaman utama (Tailwind CSS)
+├── script.js            # Logika filter/search/bookmark/pagination
+└── README.md            # Dokumentasi
 ```
 
 ## 🔧 Update Data
@@ -44,16 +44,22 @@ Website untuk mencari jurnal SINTA 2-6 yang **gratis/biaya rendah** dan **LOA ce
 2. Format JSON:
    ```json
    {
+     "id": 1,
      "title": "Jurnal Pendidikan IPA",
-     "sinta_level": "S2",
-     "apc": "Gratis",
-     "loa_time": "2-4 minggu",
+     "sintaLevel": 2,
+     "apc": 0,
+     "loaTime": "2-4 minggu",
+     "scope": ["Education", "Science"],
+     "frequency": "Kuartalan",
+     "e_issn": "1234-5678",
+     "p_issn": "8765-4321",
+     "journal_url": "https://jurnal.example.com",
      "website_url": "https://jurnal.example.com"
    }
    ```
 
 ## 🛠️ Kontribusi
-- **Bug**: Laporkan via [GitHub Issues](https://github.com/username/sinta-journal-finder/issues).
+- **Bug**: Laporkan via GitHub Issues.
 - **Fitur Baru**: Fork repo dan buat PR.
 
 ## 📄 Lisensi
